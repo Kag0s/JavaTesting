@@ -3,17 +3,16 @@ package com.company;
 public class Accumul {
 
     public static String accum(String s) {
-        String ans = "";
+        StringBuilder sb = new StringBuilder();
         for(int i = 0;i<s.length();i++){
-            ans = ans +(Character.toUpperCase(s.charAt(i)));
-            System.out.print(ans);
+            sb.append(Character.toUpperCase(s.charAt(i)));
             for(int j = 0;j<i;j++){
-                ans= ans + (Character.toLowerCase(s.charAt(i)));
+                sb.append(Character.toLowerCase(s.charAt(i)));
             }
             if (i+1<s.length()) {
-                ans = ans + ('-');
+                sb.append(('-'));
             }
         }
-        return ans;
+        return sb.toString();
     }
 }
